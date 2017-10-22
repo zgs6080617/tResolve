@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<Message>
+<Body>
+<Parameter paramname ="max_thread" paramvalue ="10"/>
+<Parameter paramname ="path_name" paramvalue ="/home/d5000/daxing/xml"/>
+<Parameter paramname ="cime_path" paramvalue ="/home/d5000/daxing/cime"/>
+<Parameter paramname ="back_path" paramvalue ="/home/d5000/daxing/back"/>
+<Parameter paramname ="poll_interval" paramvalue ="5"/>
+<Parameter paramname ="max_record" paramvalue ="5000"/>
+<Parameter paramname ="db_server" paramvalue ="mdb"/>
+<Parameter paramname ="db_user" paramvalue ="EVALU"/>
+<Parameter paramname ="db_password" paramvalue ="EVALU"/>
+</Body>
+</Message>

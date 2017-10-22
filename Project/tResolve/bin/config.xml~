@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<Message>
+<Body>
+<Parameter paramname ="max_thread" paramvalue ="20"/>
+<Parameter paramname ="oracle_path" paramvalue ="/home/d5000/fujian/monitoring/dmsread"/>
+<Parameter paramname ="path_name" paramvalue ="/home/d5000/fujian/dmsxml_test"/>
+<Parameter paramname ="cime_path" paramvalue ="/home/d5000/fujian/DmsCim"/>
+<Parameter paramname ="mx_path" paramvalue ="/home/d5000/fujian/data/cimdata/transmission/zw/upload"/>
+<Parameter paramname ="back_path" paramvalue ="/home/d5000/fujian/dmsback"/>
+<Parameter paramname ="day" paramvalue ="30"/>
+<Parameter paramname ="poll_interval" paramvalue ="1800"/>
+<Parameter paramname ="max_record" paramvalue ="5000"/>
+<Parameter paramname ="db_server" paramvalue ="mdb"/>
+<Parameter paramname ="db_user" paramvalue ="EVALU"/>
+<Parameter paramname ="db_password" paramvalue ="EVALU"/>
+</Body>
+</Message>

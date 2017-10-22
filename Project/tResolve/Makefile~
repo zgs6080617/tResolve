@@ -1,0 +1,32 @@
+ALL: main
+.SUFFIXES:.o .C .cxx .cpp
+CC=g++ -g -D_LINUX_  -fpermissive  
+#c++FLAGS=-D_PTHREAD_USE_D4 $(DEBUG)  -D_ORACLE_ -DHISSVR_A -D_OSVer4 -D_DEBUG_  -D__EXTENSIONS__ -D_RULEMSG_ -D_SYRULE_ -D_HUNAN_ -D_MULPIC_  
+#CC=aCC -g -D_HPUX_ +u1 -mt +W829
+C++FLAGS=-D_PTHREAD_USE_D4 $(DEBUG) -DHISSVR_A -D_OSVer4 -D_DEBUG_  -D__EXTENSIONS__ -D_RULEMSG_ -D_SYRULE_ -D_HUNAN_ -D_MULPIC_ -D_D5000 -DTIXML_USE_STL -D_TQRELEALSE -D_TEST_
+
+RSOLVE=$(HOME)/src/zgsCode/tResolve
+RTEPDR=$(HOME)/rtepdr
+INCDIR=-I. -I$(HOME)/include -I$(RTE)/include -I$(RTE)/rte/evnman/include \
+       -I$(RTE)/comm/include -I$(PSBOB)/include -I$(PWRFLOW)/include  \
+       -I$(RTE)/rte/sysman/mgr/include -I$(SUMBOB)/include \
+       -I$(SCADA)/include -I$(HOME)/src/include
+LIBDIR=-L$(HOME)/lib 
+LIBS=-lpthread -lrt -lc -lm -ldcisg 
+OBJECTDIR=$(RSOLVE)/obj
+OBJ_RSOLVE = main.o resolvexml.o oci_db.o tinystr.o tinyxml.o tinyxmlerror.o tinyxmlparser.o 
+VPATH = $(RSOLVE)/src:$(OBJECTDIR):$(RSOLVE)/
+.cpp.o:
+	$(CC) $(C++FLAGS) $(INCDIR) -c $< -o $(OBJECTDIR)/$(@F)
+	@echo "********" $< is link ok. "********"
+	@echo ""
+main:$(OBJ_RSOLVE)
+	cd $(OBJECTDIR);$(CC) $(C++FLAGS) -o $(RSOLVE)/bin/tResolve $(OBJ_RSOLVE) $(LIBDIR) $(LIBS)
+	@echo "********" $@ is builded ok. "********"
+	@echo "" 
+
+clean:
+	cd $(OBJECTDIR);rm $(OBJECTDIR)/*.*;cd $(RSOLVE)/bin;rm $(RSOLVE)/bin/tResolve;
+
+install:
+	cp $(RSOLVE)/bin/tResolve $(HOME)/bin/tResolve
